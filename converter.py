@@ -15,8 +15,7 @@ frames = []  # will be list of asciified frames
 
 def get_ascii_pixel(p):  # takes [r, g, b]
     avg = (p[0] * p[1] * p[2]) / 3
-    print(f'avg: {avg}')
-    return config.gradients[0][math.floor(((len(config.gradients[0])-1)/254)*avg)]
+    return config.gradients[0][math.floor((((len(config.gradients[0])-1)/254)*avg))]
 
 while True:
     bytes_in = process.stdout.read(h * w * 3)
@@ -29,13 +28,14 @@ while True:
     frame = numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]).copy()
     # frame[0][0] is [r, g, b], frame is 2d array / matrix duh
 
-    frame.setflags(write=1)
+    frame_new = []
 
     for i in range(len(frame)):  # rows
         for j in range(len(frame[i])):  # columns
-            frame[i][j] = get_ascii_pixel(frame[i][j])
+            p = get_ascii_pixel(frame[i][j])
+            frame[i].append(get_ascii_pixel(frame[i][j]))
 
-    frames.append(frame)  # append asciified frame
+    frames.append(frame_new)  # append asciified frame
 
 # test
 for frame in frames:
