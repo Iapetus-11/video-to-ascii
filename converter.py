@@ -32,7 +32,6 @@ while True:
 
     for i in range(len(frame)):  # rows
         for j in range(len(frame[i])):  # columns
-            p = get_ascii_pixel(frame[i][j])
             frame_new[i].append(get_ascii_pixel(frame[i][j]))
 
     frames.append(frame_new)  # append asciified frame
