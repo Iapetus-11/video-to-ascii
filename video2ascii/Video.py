@@ -2,7 +2,7 @@ import ffmpeg
 
 
 class Video:
-    def __init__(*, w: int, h: int, file_name: str):
+    def __init__(self, *, w: int, h: int, file_name: str):
         self.w = w
         self.h = h
 
