@@ -42,5 +42,6 @@ while True:
 
 # test
 for frame in frames:
-    print(frame)
-    exit(0)
+    print('\n'*50)
+    print('\n'.join(frame))
+    time.sleep(1)
