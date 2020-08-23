@@ -34,7 +34,7 @@ class VideoConverter:
             if 0 <= gradient < len(gradients):
                 self.grad = gradients[gradient]
             else:
-                self.grad = gradients[2]
+                self.grad = gradients[0]
         else:
             self.grad = gradient
 
