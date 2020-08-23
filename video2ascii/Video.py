@@ -10,6 +10,19 @@ class FileNotFound(Exception):
         return self.msg
 
 
+def get_fps(file_name):
+    out = subprocess.check_output(["ffprobe", file_name, "-v", "0", "-select_streams", "v", "-print_format", "flat", "-show_entries", "stream=r_frame_rate"])
+    rate = out.split('=')[1].strip()[1:-1].split('/')
+
+    if len(rate) == 1:
+        return float(rate[0])
+
+    if len(rate) == 2:
+        return float(rate[0])/float(rate[1])
+
+    return 30
+
+
 class Video:
     def __init__(self, *, w: int, h: int, file_name: str):
         self.w = w
