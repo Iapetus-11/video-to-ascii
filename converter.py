@@ -19,3 +19,6 @@ while True:
 print(frames[0])
 print(type(frames[0]))
 print(len(frames))
+
+with open('dump', 'w+') as f:
+    f.write(frames.dumps())
