@@ -38,11 +38,11 @@ class VideoConverter:
         else:
             self.grad = gradient
 
-    def get_ascii_pixel(p):  # takes [r, g, b]
+    def get_ascii_pixel(self, p):  # takes [r, g, b]
         avg = (int(p[0]) + int(p[1]) + int(p[2])) / 3
         return self.grad[int((avg*(len(self.grad)-1))/255)]
 
-    def convert():
+    def convert(self):
         self.video_input = self.video_input.filter('scale', sw, sh)
 
         self.process = self.video_input.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
