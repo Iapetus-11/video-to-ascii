@@ -28,7 +28,7 @@ w = 320
 aspect_ratio = w/h
 
 sh = 100
-sw = math.floor(math.ceil(aspect_ratio*sh)*2)
+sw = math.floor(math.ceil(aspect_ratio*sh)*2)  # 2x to account for font size
 
 vid_inp = ffmpeg.input('test2.mp4')
 vid_inp = vid_inp.video.filter('scale', sw, sh)
