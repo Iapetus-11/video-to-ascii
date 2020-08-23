@@ -2,6 +2,7 @@ import classyjson  # classy-json
 import ffmpeg  # ffmpeg-python
 import numpy  # numpy
 import time
+import math
 
 with open('config.json', 'r') as c:
     config = classyjson.load(c)
@@ -14,7 +15,7 @@ w = 960
 aspect_ratio = w/h
 
 sh = 250
-sw = aspect_ratio*sh
+sw = math.floor(aspect_ratio*sh)
 
 vid_inp = ffmpeg.input('test.mov')
 vid_inp = vid_inp.video.filter('scale', sw, sh)
