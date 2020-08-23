@@ -28,6 +28,8 @@ while True:
     frame = numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3])
     # frame[0][0] is [r, g, b], frame is 2d array / matrix duh
 
+    frame.setflags(write=1)
+
     for i in range(len(frame)):  # rows
         for j in range(len(frame[i])):  # columns
             frame[i][j] = get_ascii_pixel(frame[i][j])
