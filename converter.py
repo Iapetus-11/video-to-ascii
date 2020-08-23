@@ -43,5 +43,6 @@ while True:
 # test
 for frame in frames:
     print('\n'*50)
-    print('\n'.join(frame))
+    for row in f:
+        print('\n'.join(row))
     time.sleep(1)
