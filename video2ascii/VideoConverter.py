@@ -3,7 +3,7 @@ import numpy as np
 import typing
 import math
 
-from .Video import Video
+from Video import Video
 
 gradients = [
     '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,^.\'\"` ',
