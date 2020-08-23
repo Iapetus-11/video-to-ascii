@@ -64,7 +64,7 @@ class VideoConverter:
             for i, row in enumerate(frame):
                 frame_new.append([])
                 for col in row:
-                    frame_new[i].append(get_ascii_pixel(col))
+                    frame_new[i].append(self.get_ascii_pixel(col))
 
             self.frames.append(frame_new)  # append asciified frame
 
