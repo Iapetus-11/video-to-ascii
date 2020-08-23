@@ -1,5 +1,9 @@
-import ffmpeg # ffmpeg-python
-import numpy
+import classyjson  # classy-json
+import ffmpeg  # ffmpeg-python
+import numpy  # numpy
+
+with open('config.json', 'r') as c:
+    config = classyjson.loads(c)
 
 h = 540
 w = 960
@@ -16,10 +20,3 @@ while True:
 
     # frame is essentially a list of rgb [[r, g, b], [r, g, b], [r, g, b],...]
     frames.append(numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]))
-
-print(frames[0])
-print(type(frames[0]))
-print(len(frames))
-
-print(frames[0][0])
-print(len(frames[0][0]))
