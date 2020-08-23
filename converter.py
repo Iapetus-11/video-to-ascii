@@ -21,4 +21,4 @@ print(type(frames[0]))
 print(len(frames))
 
 with open('dump', 'w+') as f:
-    f.write(frames.dumps())
+    f.write(frames[0].dumps())
