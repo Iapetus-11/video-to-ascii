@@ -3,6 +3,7 @@ import ffmpeg  # ffmpeg-python
 import numpy  # numpy
 import time
 import math
+import os
 
 with open('config.json', 'r') as c:
     config = classyjson.load(c)
@@ -51,7 +52,8 @@ while True:
 
 # test
 for frame in frames:
-    print('\n'*50)
+    #print('\n'*50)
+    os.system('cls')
     body = ''
     for row in frame:
         body += '\n' + ''.join(row)
