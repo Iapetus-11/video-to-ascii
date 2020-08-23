@@ -30,7 +30,7 @@ while True:
 
     # frame is essentially a list of rgb [[r, g, b], [r, g, b], [r, g, b],...]
     #frames.append(numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]))
-    frame = zoompannumpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]).copy()
+    frame = numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]).copy()
     # frame[0][0] is [r, g, b], frame is 2d array / matrix duh
 
     frame_new = []
