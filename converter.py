@@ -28,7 +28,7 @@ w = 320
 aspect_ratio = w/h
 
 sh = 150
-sw = math.ceil(aspect_ratio*sh)*1.5
+sw = math.floor(math.ceil(aspect_ratio*sh)*1.5)
 
 vid_inp = ffmpeg.input('test2.mp4')
 vid_inp = vid_inp.video.filter('scale', sw, sh)
