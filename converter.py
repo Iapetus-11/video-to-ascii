@@ -11,12 +11,23 @@ with open('config.json', 'r') as c:
 config.gradients[0] = ''.join(reversed([c for c in config.gradients[0]]))
 config.gradients[1] = ''.join(reversed([c for c in config.gradients[1]]))
 
+# for test1
+"""
 h = 540
 w = 960
 
 aspect_ratio = w/h
 
 sh = 175
+sw = math.ceil(aspect_ratio*sh)
+"""
+
+h = 320
+w = 320
+
+aspect_ratio = w/h
+
+sh = 150
 sw = math.ceil(aspect_ratio*sh)
 
 vid_inp = ffmpeg.input('test.mov')
