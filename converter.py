@@ -1,6 +1,9 @@
 import ffmpeg # ffmpeg-python
 import numpy
 
+h = 540
+w = 960
+
 process = ffmpeg.input('test.mov').output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
 frames = []
