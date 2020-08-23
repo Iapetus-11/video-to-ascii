@@ -12,10 +12,10 @@ config.gradients[0] = ''.join(reversed([c for c in config.gradients[0]]))
 h = 540
 w = 960
 
-aspect_ratio = h/w
+aspect_ratio = w/h
 
 sh = 250
-sw = math.floor(aspect_ratio*sh)
+sw = math.ceil(aspect_ratio*sh)
 
 vid_inp = ffmpeg.input('test.mov')
 vid_inp = vid_inp.video.filter('scale', sw, sh)
