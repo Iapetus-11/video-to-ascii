@@ -26,7 +26,7 @@ frames = []  # will be list of asciified frames
 
 def get_ascii_pixel(p):  # takes [r, g, b]
     avg = (int(p[0]) + int(p[1]) + int(p[2])) / 3
-    grad = config.gradients[0]
+    grad = config.gradients[1]
     return grad[int((avg*(len(grad)-1))/255)]
 
 while True:
