@@ -18,6 +18,7 @@ frames = []  # will be list of asciified frames
 def get_ascii_pixel(p):  # takes [r, g, b]
     avg = (int(p[0])/8 * int(p[1])/8 * int(p[2])/8) / 3
     grad = config.gradients[0]
+    print(int((avg/(len(grad)-1))/255))
     char = grad[int((avg/(len(grad)-1))/255)]
     print(f'{avg}: {char}')
     time.sleep(.25)
