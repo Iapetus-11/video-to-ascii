@@ -9,7 +9,7 @@ process = ffmpeg.input('test.mov').output('pipe:', format='rawvideo', pix_fmt='r
 frames = []
 
 while True:
-    bytes_in = process.stdout.read(h, w, 3)
+    bytes_in = process.stdout.read(h * w * 3)
 
     if not bytes_in:
         break
