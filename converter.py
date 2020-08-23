@@ -6,7 +6,7 @@ import time
 with open('config.json', 'r') as c:
     config = classyjson.load(c)
 
-config.gradients[0] = ''.join(reversed(config.gradients[0].split('')))
+config.gradients[0] = ''.join(reversed([c for c in config.gradients[0]]))
 
 h = 540
 w = 960
