@@ -20,5 +20,5 @@ print(frames[0])
 print(type(frames[0]))
 print(len(frames))
 
-with open('dump', 'w+') as f:
-    frames[0].dump(f)
+print(frames[0][0])
+print(len(frames[0][0]))
