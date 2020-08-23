@@ -14,6 +14,7 @@ while True:
     if not bytes_in:
         break
 
+    # frame is essentially a list of rgb [[r, g, b], [r, g, b], [r, g, b],...]
     frames.append(numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]))
 
 print(frames[0])
