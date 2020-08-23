@@ -17,10 +17,10 @@ class Video:
 
         self.file_name = file_name
 
-        if not os.isfile(self.file_name):
+        if not os.path.isfile(self.file_name):
             raise FileNotFound(self.file_name)
 
-        if not os.isfile('ffmpeg.exe'):
+        if not os.path.isfile('ffmpeg.exe'):
             print(f'You must download ffmpeg.exe and install it in this directory: \'{os.getcwd()}\'')
             exit(0)
 
