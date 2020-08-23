@@ -2,9 +2,7 @@ from time import sleep
 import os
 
 class Viewer:
-    def __init__(self, frames, fps, **meta):
-        self.frames = frames
-
+    def __init__(self, **meta):
         for attr in meta.keys():
             self.__dict__[attr] = meta[attr]
 
