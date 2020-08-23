@@ -4,7 +4,7 @@ import numpy  # numpy
 import math
 
 with open('config.json', 'r') as c:
-    config = classyjson.loads(c)
+    config = classyjson.load(c)
 
 h = 540
 w = 960
