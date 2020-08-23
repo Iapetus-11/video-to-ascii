@@ -1,7 +1,7 @@
 import ffmpeg # ffmpeg-python
 import numpy
 
-process = ffmpeg.input('pipe:', format='rawvideo', pix_fmt='rgb24', input='test.mov').run_async(pipe_stdin=True)
+process = ffmpeg.input('test.mov').output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
 frames = []
 
