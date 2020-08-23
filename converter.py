@@ -53,6 +53,6 @@ for frame in frames:
     print('\n'*50)
     body = ''
     for row in frame:
-        body += ''.join(row)
+        body += '\n' + ''.join(row)
     print(body)
     time.sleep(.35)
