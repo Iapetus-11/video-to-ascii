@@ -31,6 +31,7 @@ while True:
     frame_new = []
 
     for i in range(len(frame)):  # rows
+        print(f'i: {i}/{len(frame)}')
         for j in range(len(frame[i])):  # columns
             print(f'j: {j}/{len(frame[i])}')
             frame_new[i].append(get_ascii_pixel(frame[i][j]))
