@@ -14,7 +14,7 @@ process = ffmpeg.input('test.mov').output('pipe:', format='rawvideo', pix_fmt='r
 frames = []  # will be list of asciified frames
 
 def get_ascii_pixel(p):  # takes [r, g, b]
-    avg = (p[0] * p[1] * p[2]) / 3
+    avg = (int(p[0]) * int(p[1]) * int(p[2])) / 3
     return config.gradients[0][math.floor((((len(config.gradients[0])-1)/254)*avg))]
 
 while True:
