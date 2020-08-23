@@ -49,3 +49,8 @@ asciified_frames = []
 
 for frame in frames:
     asciified_frames.append(asciify_frame(asciify_frame_pixels(frame)))
+
+# test
+for frame in asciified_frames:
+    print('\n'*100)
+    print(frame)
