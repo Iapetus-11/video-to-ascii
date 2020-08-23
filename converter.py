@@ -7,7 +7,8 @@ import math
 with open('config.json', 'r') as c:
     config = classyjson.load(c)
 
-#config.gradients[0] = ''.join(reversed([c for c in config.gradients[0]]))
+config.gradients[0] = ''.join(reversed([c for c in config.gradients[0]]))
+config.gradients[1] = ''.join(reversed([c for c in config.gradients[1]]))
 
 h = 540
 w = 960
