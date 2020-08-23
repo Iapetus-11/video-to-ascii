@@ -6,8 +6,6 @@ import time
 with open('config.json', 'r') as c:
     config = classyjson.load(c)
 
-print(f'Config: {config}')
-
 h = 540
 w = 960
 
