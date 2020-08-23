@@ -11,7 +11,9 @@ print(f'Config: {config}')
 h = 540
 w = 960
 
-process = ffmpeg.input('test.mov').output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
+vid_inp = ffmpeg.input('test.mov')
+vid_inp.zoompan(zoom=.25)
+process = vid_inp.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
 frames = []  # will be list of asciified frames
 
@@ -28,7 +30,7 @@ while True:
 
     # frame is essentially a list of rgb [[r, g, b], [r, g, b], [r, g, b],...]
     #frames.append(numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]))
-    frame = numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]).copy()
+    frame = zoompannumpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]).copy()
     # frame[0][0] is [r, g, b], frame is 2d array / matrix duh
 
     frame_new = []
