@@ -12,7 +12,7 @@ config.gradients[0] = ''.join(reversed([c for c in config.gradients[0]]))
 h = 540
 w = 960
 
-aspect_ratio = w/h
+aspect_ratio = h/w
 
 sh = 250
 sw = math.floor(aspect_ratio*sh)
