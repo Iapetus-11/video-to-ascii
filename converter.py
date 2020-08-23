@@ -16,7 +16,7 @@ w = 960
 
 aspect_ratio = w/h
 
-sh = 100
+sh = 175
 sw = math.ceil(aspect_ratio*sh)
 
 vid_inp = ffmpeg.input('test.mov')
@@ -58,4 +58,4 @@ for frame in frames:
     for row in frame:
         body += '\n' + ''.join(row)
     print(body)
-    time.sleep(.2)
+    time.sleep(.05)
