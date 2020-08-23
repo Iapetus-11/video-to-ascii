@@ -1,1 +1,2 @@
 numpy==1.19.1
+classy-json==1.9.3
