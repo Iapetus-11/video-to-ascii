@@ -48,4 +48,4 @@ for frame in frames:
     print('\n'*50)
     for row in frame:
         print(''.join(row))
-    time.sleep(.5)
+    time.sleep(.25)
