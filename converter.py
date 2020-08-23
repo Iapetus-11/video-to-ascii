@@ -12,7 +12,7 @@ h = 540
 w = 960
 
 vid_inp = ffmpeg.input('test.mov')
-vid_inp.video.filter('scale', w=w/2, h=h/2)
+vid_inp.video.filter('scale', w=w/4, h=h/4)
 process = vid_inp.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
 frames = []  # will be list of asciified frames
