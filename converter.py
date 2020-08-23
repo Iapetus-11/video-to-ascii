@@ -9,8 +9,8 @@ with open('config.json', 'r') as c:
 h = 540
 w = 960
 
-sh = 96
-sw = 54
+sh = 216
+sw = 384
 
 vid_inp = ffmpeg.input('test.mov')
 vid_inp = vid_inp.video.filter('scale', sh, sw)
