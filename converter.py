@@ -30,7 +30,7 @@ aspect_ratio = w/h
 sh = 150
 sw = math.ceil(aspect_ratio*sh)
 
-vid_inp = ffmpeg.input('test.mov')
+vid_inp = ffmpeg.input('test2.mp4')
 vid_inp = vid_inp.video.filter('scale', sw, sh)
 process = vid_inp.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
