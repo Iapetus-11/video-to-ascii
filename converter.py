@@ -16,4 +16,6 @@ while True:
 
     frames.append(numpy.frombuffer(bytes_in, numpy.uint8).reshape([h, w, 3]))
 
+print(frames[0])
+print(type(frames[0]))
 print(len(frames))
