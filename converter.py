@@ -36,6 +36,10 @@ while True:
             print(f'j: {j}/{len(frame[i])}')
             frame_new[i].append(get_ascii_pixel(frame[i+1][j+1]))
 
+    for i, row in enumerate(frame):
+        for col in row:
+            frame_new[i].append(get_ascii_pixel(col))
+
     frames.append(frame_new)  # append asciified frame
 
 # test
