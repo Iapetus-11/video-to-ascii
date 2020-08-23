@@ -15,7 +15,7 @@ frames = []  # will be list of asciified frames
 
 def get_ascii_pixel(p):  # takes [r, g, b]
     avg = (p[0] * p[1] * p[2]) / 3
-    return config.gradients[0][math.floor()((len(config.gradients[0])-1)/254)*avg)]
+    return config.gradients[0][math.floor(((len(config.gradients[0])-1)/254)*avg)]
 
 while True:
     bytes_in = process.stdout.read(h * w * 3)
