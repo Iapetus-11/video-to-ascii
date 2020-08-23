@@ -13,7 +13,7 @@ sh = 216
 sw = 384
 
 vid_inp = ffmpeg.input('test.mov')
-vid_inp = vid_inp.video.filter('scale', sh, sw)
+vid_inp = vid_inp.video.filter('scale', sw, sh)
 process = vid_inp.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
 frames = []  # will be list of asciified frames
