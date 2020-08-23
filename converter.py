@@ -55,4 +55,4 @@ for frame in frames:
     for row in frame:
         body += '\n' + ''.join(row)
     print(body)
-    time.sleep(.35)
+    time.sleep(.2)
