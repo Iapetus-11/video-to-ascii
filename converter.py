@@ -24,7 +24,7 @@ def get_ascii_pixel(p):  # takes [r, g, b]
     return grad[int((avg*(len(grad)-1))/255)]
 
 while True:
-    bytes_in = process.stdout.read(h * w * 3)
+    bytes_in = process.stdout.read(sh * sw * 3)
 
     if not bytes_in:
         break
