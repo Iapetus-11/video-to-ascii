@@ -26,12 +26,26 @@ def get_ascii_pixel(p):  # takes [r, g, b]
     avg = (p[0] * p[1] * p[2]) / 3
     return config.gradients[0][math.floor((len(config.gradients[0])-1)/254)*avg]
 
-def asciify_frame(frm):
+def asciify_frame_pixels(frm):  # takes normal frame (list of pixels)
     ascii_frame = []
-    
+
     for pixel in frm:
         ascii_frame.append(get_ascii_pixel(pixel))
 
     return ascii_frame
 
+def asciify_frame(frm_ascii_pixels):  # takes asciified frame (list of characters)
+    asciified_frame = ''
+
+    for i in range(h):
+        lines = []
+
+        for j in range(w):
+            lines.append(''.join(frm_ascii_pixels[w*i]))
+
+        asciified_frame += '\n'.join(lines)
+
+asciified_frames = []
+
 for frame in frames:
+    asciified_frames.append(asciify_frame(asciify_frame_pixels(frame)))
