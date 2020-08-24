@@ -7,7 +7,7 @@ class Viewer:
             self.__dict__[attr] = meta[attr]
 
     def view_frame(f_index: int):
-        frame = frames[f_index]
+        frame = self.frames[f_index]
         body = ''
 
         for row in frame:
@@ -26,6 +26,6 @@ class Viewer:
         print(body)
 
     def view():
-        for frame in frames:
+        for frame in self.frames:
             self._view_frame(frame)
-            sleep(1/fps)
+            sleep(1/self.fps)
