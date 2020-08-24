@@ -9,7 +9,7 @@ from Viewer import *
 gradients = [
     '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,^.\'\"` ',
     '@%#*+=-:. ',
-    '@#%+=~-*_,.` '
+    '@#%+=~-_,. '
 ]
 
 class VideoConverter:
