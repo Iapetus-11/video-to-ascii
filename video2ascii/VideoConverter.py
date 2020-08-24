@@ -13,7 +13,7 @@ gradients = [
 ]
 
 class VideoConverter:
-    def __init__(self, *, w: int, h: int, file_name: str, scaled_w: int = 100, stretch: float = 2, gradient: typing.Union[int, str] = 0):
+    def __init__(self, *, w: int, h: int, file_name: str, scaled_w: int = 100, stretch: float = 5, gradient: typing.Union[int, str] = 0):
         self.w = w
         self.h = h
 
@@ -46,7 +46,7 @@ class VideoConverter:
         return self.grad[int((avg*(len(self.grad)-1))/255)]
 
     def convert(self):
-        self.video_input = self.video_input.filter('scale', self.sh, self.sw)
+        self.video_input = self.video_input.filter('scale', self.sw, self.sh)
 
         self.process = self.video_input.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
