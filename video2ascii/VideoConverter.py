@@ -13,7 +13,7 @@ gradients = [
 ]
 
 class VideoConverter:
-    def __init__(self, *, w: int, h: int, file_name: str, scaled_w: int = 100, stretch: float = 5, gradient: typing.Union[int, str] = 0):
+    def __init__(self, *, w: int, h: int, file_name: str, scaled_w: int = 100, stretch: float = 2, gradient: typing.Union[int, str] = 0):
         self.w = w
         self.h = h
 
