@@ -37,4 +37,6 @@ class Video:
             print(f'\n\nERROR: You must download ffmpeg.exe and install it in this directory: \'{os.getcwd()}\'\n')
             exit(0)
 
+        self.fps = get_fps(self.file_name)
+
         self.video_input = ffmpeg.input(file_name)

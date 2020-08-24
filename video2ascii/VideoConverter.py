@@ -2,8 +2,10 @@ import ffmpeg
 import numpy as np
 import typing
 import math
+import subprocess
 
-from Video import Video
+from Video import *
+from Viewer import *
 
 gradients = [
     '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\\|()1{}[]?-_+~i!lI;:,^.\'\"` ',
@@ -19,16 +21,18 @@ class VideoConverter:
         self.aspect_ratio = self.w/self.h
         self.stretch = stretch
 
+        self.sw = scaled_w
+        self.sh = int(math.ceil(self.aspect_ratio*self.sw)*self.stretch)
+
         self.file_name = file_name
         self.video = Video(w=self.w, h=self.h, file_name=self.file_name)
         self.video_input = self.video.video_input.video
-
-        self.sw = scaled_w
-        self.sh = int(math.ceil(self.aspect_ratio*self.sw)*self.stretch)
+        self.fps = self.video.fps
 
         self.process = None
 
         self.frames = None
+        self.viewer = None
 
         if isinstance(gradient, int):
             if 0 <= gradient < len(gradients):
@@ -68,4 +72,5 @@ class VideoConverter:
 
             self.frames.append(frame_new)  # append asciified frame
 
-        return self.frames
+        self.viewer = Viewer(self.frames, self.__dict__)
+        return self.viewer
