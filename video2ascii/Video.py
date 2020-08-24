@@ -1,6 +1,6 @@
 import ffmpeg
 import os
-import subprocess
+import cv2
 
 
 class FileNotFound(Exception):
@@ -13,7 +13,7 @@ class FileNotFound(Exception):
 
 def get_fps(file_name):
     out = subprocess.check_output(["ffprobe", file_name, "-v", "0", "-select_streams", "v", "-print_format", "flat", "-show_entries", "stream=r_frame_rate"])
-    rate = out.decode().split('=')   
+    rate = out.decode().split('=')
     rate = rate[1].strip()
     rate = rate[1:-1].split('/')
 
@@ -38,10 +38,6 @@ class Video:
 
         if not os.path.isfile('ffmpeg.exe'):
             print(f'\n\nERROR: You must download ffmpeg.exe and install it in this directory: \'{os.getcwd()}\'\n')
-            exit(0)
-
-        if not os.path.isfile('ffprobe.exe'):
-            print(f'\n\nERROR: You must download ffprobe.exe and install it in this directory: \'{os.getcwd()}\'\n')
             exit(0)
 
         self.fps = get_fps(self.file_name)
