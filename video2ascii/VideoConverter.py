@@ -2,7 +2,6 @@ import ffmpeg
 import numpy as np
 import typing
 import math
-import subprocess
 
 from Video import *
 from Viewer import *
