@@ -46,7 +46,7 @@ class VideoConverter:
         return self.grad[int((avg*(len(self.grad)-1))/255)]
 
     def convert(self):
-        self.video_input = self.video_input.filter('scale', self.sw, self.sh)
+        self.video_input = self.video_input.filter('scale', self.sh, self.sw)
 
         self.process = self.video_input.output('pipe:', format='rawvideo', pix_fmt='rgb24').run_async(pipe_stdout=True)
 
