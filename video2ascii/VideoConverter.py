@@ -71,5 +71,5 @@ class VideoConverter:
 
             self.frames.append(frame_new)  # append asciified frame
 
-        self.viewer = Viewer(self.frames, self.__dict__)
+        self.viewer = Viewer(self.__dict__)
         return self.viewer
