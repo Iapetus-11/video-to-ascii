@@ -28,5 +28,5 @@ class Viewer:
     def view(self):
         for frame in self.frames:
             self._view_frame(frame)
-            sleep(.25)
-            sleep(1/self.fps)
+            sleep(.05)
+            #sleep(1/self.fps)
