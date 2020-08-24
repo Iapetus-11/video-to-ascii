@@ -20,8 +20,10 @@ class VideoConverter:
         self.aspect_ratio = self.w/self.h
         self.stretch = stretch
 
-        self.sw = scaled_w*self.stretch
+        self.sw = scaled_w
         self.sh = int(math.ceil(self.aspect_ratio*self.sw))
+
+        self.sw *= self.stretch
 
         print(self.sw)
         print(self.sh)
