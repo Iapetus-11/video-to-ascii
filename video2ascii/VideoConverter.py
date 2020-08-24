@@ -23,6 +23,9 @@ class VideoConverter:
         self.sw = scaled_w*self.stretch
         self.sh = int(math.ceil(self.aspect_ratio*self.h))
 
+        print(sw)
+        print(sh)
+
         self.file_name = file_name
         self.video = Video(w=self.w, h=self.h, file_name=self.file_name)
         self.video_input = self.video.video_input.video
