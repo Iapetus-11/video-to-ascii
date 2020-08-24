@@ -13,7 +13,7 @@ gradients = [
 ]
 
 class VideoConverter:
-    def __init__(self, *, w: int, h: int, file_name: str, scaled_w: int = 75, stretch: float = 1, gradient: typing.Union[int, str] = 0):
+    def __init__(self, *, w: int, h: int, file_name: str, scaled_w: int = 75, stretch: float = 4, gradient: typing.Union[int, str] = 0):
         self.w = w
         self.h = h
 
@@ -21,7 +21,7 @@ class VideoConverter:
         self.stretch = stretch
 
         self.sw = scaled_w*self.stretch
-        self.sh = int(math.ceil(self.aspect_ratio*self.sw))
+        self.sh = int(math.ceil(self.aspect_ratio*self.h))
 
         self.file_name = file_name
         self.video = Video(w=self.w, h=self.h, file_name=self.file_name)
